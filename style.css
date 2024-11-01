@@ -1,0 +1,121 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #252525; /* Fundo cinza escuro */
+    color: white;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5 );
+    z-index: 1;
+}
+
+h1, h2 {
+    margin: 0;
+    padding: 10px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 20px 80px;
+    border-radius: 25px;
+    margin: 10px;
+    background-color: #fffb19; /* Cor do botão */
+    color: black;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 25px;
+    outline: none;
+    border: none;
+}
+
+.btn:hover {
+    background-color: #c4a12f; /* Cor do botão ao passar o mouse */
+}
+
+.info-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.card {
+    background-color: rgb(231, 231, 231);
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 40px 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, background-color 0.3s;
+    width: 400px;
+    height: 400px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background-color: #f0f0f0; /* Cor do cartão ao passar o mouse */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 300px; /* Largura do campo de entrada */
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2); /* Fundo branco com transparência */
+    color: white;
+    font-size: 16px;
+    backdrop-filter: blur(5px); /* Efeito de blur no fundo */
+}
+
+
+input[type="text"]::placeholder,
+input[type="password"]::placeholder {
+    color: rgba(255, 255, 255, 0.7); /* Cor do texto do placeholder */
+}
+
+.hero {
+    background-image: url('Background.jpg'); /* Imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    position: absolute;
+    z-index: 1;
+    color: white; /* Mantém o texto branco */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 25px;
+    filter: brightness(1);
+    text-align: center;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centraliza os elementos verticalmente */
+    align-items: center; /* Centraliza os elementos horizontalmente */
+}
+
+.card-about{
+    font-size: 30px;
+}

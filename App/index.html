@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Promoção de Plantação de Árvores</title>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <!-- Seção da esquerda: Enviar imagem e mostrar pontuação -->
+            <div class="left-section">
+                <h1>Envie uma Imagem</h1>
+                <p>Pontos: <span id="score">0</span></p>
+                <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                <button id="upload-button" class="btn" onclick="triggerUpload()">Enviar Imagem</button>
+            </div>
+
+            <!-- Seção da direita: Tabela de prêmios -->
+            <div class="right-section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Prêmio</th>
+                            <th>Pontos Necessários</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Árvore Virtual</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Certificado de Plantação</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>Desconto em Produtos Ecológicos</td>
+                            <td>3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script principal -->
+    <script>
+        let score = 0
+
+        // Função para abrir o seletor de arquivos
+        function triggerUpload() {
+            document.getElementById('image-upload').click()
+        }
+
+        // Função para incrementar a pontuação ao enviar uma imagem
+        document.getElementById('image-upload').addEventListener('change', function() {
+            const file = this.files[0]
+            if (file) {
+                console.log('Imagem enviada:', file.name)
+                score += 1
+                document.getElementById('score').textContent = score
+            }
+        })
+    </script>
+</body>
+</html>

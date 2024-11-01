@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="hero">
+        <div class="content">
+            <h1>Bem-vindo!</h1>
+            <h2>Faça login para continuar</h2>
+            <form class="login-form" onsubmit="return validateLogin(event)">
+                <input type="text" id="username" placeholder="Login" required>
+                <input type="password" id="password" placeholder="Senha" required>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p id="error-message" style="color: red; display: none;">Login ou senha incorretos</p>
+        </div>
+    </div>
+
+    <script>
+        function validateLogin(event) {
+            event.preventDefault()  // Impede o formulário de enviar automaticamente
+
+            // Defina o login e senha corretos
+            const correctUsername = "Verde Consciente"
+            const correctPassword = "12345678"
+
+            // Pega os valores dos inputs
+            const username = document.getElementById("username").value
+            const password = document.getElementById("password").value
+
+            // Verifica se o login e senha são corretos
+            if (username === correctUsername && password === correctPassword) {
+                location.href = 'App/index.html'
+            } else {
+                const errorMessage = document.getElementById("error-message")
+                errorMessage.style.display = "block"
+                errorMessage.textContent = "Login ou senha incorretos"
+            }
+        }
+    </script>
+</body>
+</html>
